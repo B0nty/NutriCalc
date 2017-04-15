@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C276EA71EA0FE630056A7E9 /* InsertDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C276EA61EA0FE630056A7E9 /* InsertDataVC.swift */; };
+		1C276EA91EA0FED50056A7E9 /* showDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C276EA81EA0FED50056A7E9 /* showDetailsVC.swift */; };
 		1C45A5911EA0F5660032B79B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C45A5901EA0F5660032B79B /* AppDelegate.swift */; };
 		1C45A5931EA0F5660032B79B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C45A5921EA0F5660032B79B /* ViewController.swift */; };
 		1C45A5961EA0F5660032B79B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C45A5941EA0F5660032B79B /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C276EA61EA0FE630056A7E9 /* InsertDataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertDataVC.swift; sourceTree = "<group>"; };
+		1C276EA81EA0FED50056A7E9 /* showDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showDetailsVC.swift; sourceTree = "<group>"; };
 		1C45A58D1EA0F5660032B79B /* NutriCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C45A5901EA0F5660032B79B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C45A5921EA0F5660032B79B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +60,8 @@
 		1C45A58F1EA0F5660032B79B /* NutriCalc */ = {
 			isa = PBXGroup;
 			children = (
+				1C45A5A51EA0F5C70032B79B /* View */,
 				1C45A5901EA0F5660032B79B /* AppDelegate.swift */,
-				1C45A5921EA0F5660032B79B /* ViewController.swift */,
 				1C45A5941EA0F5660032B79B /* Main.storyboard */,
 				1C45A59A1EA0F5660032B79B /* Assets.xcassets */,
 				1C45A59C1EA0F5660032B79B /* LaunchScreen.storyboard */,
@@ -65,6 +69,16 @@
 				1C45A5971EA0F5660032B79B /* NutriCalc.xcdatamodeld */,
 			);
 			path = NutriCalc;
+			sourceTree = "<group>";
+		};
+		1C45A5A51EA0F5C70032B79B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C45A5921EA0F5660032B79B /* ViewController.swift */,
+				1C276EA61EA0FE630056A7E9 /* InsertDataVC.swift */,
+				1C276EA81EA0FED50056A7E9 /* showDetailsVC.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C45A5931EA0F5660032B79B /* ViewController.swift in Sources */,
+				1C276EA71EA0FE630056A7E9 /* InsertDataVC.swift in Sources */,
+				1C276EA91EA0FED50056A7E9 /* showDetailsVC.swift in Sources */,
 				1C45A5911EA0F5660032B79B /* AppDelegate.swift in Sources */,
 				1C45A5991EA0F5660032B79B /* NutriCalc.xcdatamodeld in Sources */,
 			);
@@ -308,6 +324,7 @@
 				1C45A5A41EA0F5660032B79B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
