@@ -10,7 +10,7 @@ import UIKit
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     
     @IBOutlet weak var costumerTableView: UITableView!
     
@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         costumerTableView.delegate = self
         costumerTableView.dataSource = self
         
@@ -29,12 +29,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         getCostumer()
         costumerTableView.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { // Function to enable swipe to delete
         return true
     }
     
-     // Delete costumer from TableView
+    // Delete costumer from TableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let costumer = costumers[indexPath.row]
@@ -54,28 +54,43 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = UITableViewCell()
         let costumer = costumers[indexPath.row]
         
-        cell.textLabel?.text = "\(costumer.firstName!) \(costumer.lastName!) "
-        
+        cell.textLabel?.text = "\(costumer.firstName ?? "firstName") \(costumer.lastName ?? "lastName") Age: \(costumer.age ?? "age") \(costumer.sex ?? "sex")"
         return cell
     }
     
-    func getCostumer() { // Function to get Costumer data from CoreData load into tableView
+    // Perform segue for selected row
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = costumers[indexPath.row]
+        
+        performSegue(withIdentifier: "showDetailsSegue", sender: selectedCell)
+    }
+    
+    
+    // Function to load costumers data from CoreData when program first run or get back to main ViewController
+    
+    func getCostumer() {
         
         let context =  (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         do {
             costumers = try context.fetch(Costumer.fetchRequest()) as! [Costumer]
-        } catch {
-        print("this is an error")
+        } catch { }
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showDetailsSegue" {
+            let nextVC = segue.destination as! showDetailsVC
+            nextVC.costumerDetails = sender as? Costumer
         }
         
     }
-
 }
-
-
-
 
